@@ -1,0 +1,51 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="ingredients-list">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+      <paper-material elevation="2">
+        <template is="dom-repeat" items="{{items}}">
+          <paper-icon-item>
+            <paper-checkbox item-icon></paper-checkbox>
+            <div class="flex">{{item}}</div>
+          </paper-icon-item>
+        </template>
+      </paper-material>
+    </div>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'ingredients-list',
+      properties: {
+        items: {
+          type: Array,
+          notify: true,
+        }
+      },
+      ready: function() {
+        this.items = [
+          'Ui',
+          'Knoflook',
+          'Zout',
+          'Tomaten Puree',
+          'Gehakt',
+          'Wortel'
+        ];
+      }
+    });
+  })();
+</script>
