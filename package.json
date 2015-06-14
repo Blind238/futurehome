@@ -1,0 +1,13 @@
+{
+  "name": "futurehome",
+  "description": "Media Lab Future Home Project",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x"
+  },
+  "engines": {
+      "node": "0.10.17",
+      "npm": "1.3.8"
+  }
+}
