@@ -3,7 +3,7 @@ var express = require('express'),
 
 app.use(express.compress());
 
-app.use(express.static(__dirname + '/public', { maxAge: 0}));
+app.use(express.static(__dirname + '/dist', { maxAge: 0}));
 
 if (process.env.NODE_ENV === "production")
 {
@@ -13,5 +13,3 @@ else
 {
 	app.listen(process.env.PORT || 8080);
 }
-//TODO: Handle filtering
-//
