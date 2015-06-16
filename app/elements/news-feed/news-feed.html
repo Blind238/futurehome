@@ -1,0 +1,47 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="news-feed">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <paper-material class="layout horizontal">
+      <template is="dom-repeat" items="{{entries}}">
+        <div>
+          <div class="paper-font-title">{{item.title}}</div>
+          <div class="paper-font-body1">{{item.content}}</div>
+        </div>
+      </template>
+    </paper-material>
+    <google-feeds feed="http://feeds.bbci.co.uk/news/rss.xml" count="5"></google-feeds>
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'news-feed',
+
+    properties: {
+      entries: {
+        type: Array
+      }
+    },
+    ready: function(){
+      var self = this;
+      window.addEventListener('google-feeds-response', function(e) {
+        self.entries = e.detail.feed.entries;
+      });
+    }
+  });
+})();
+</script>
