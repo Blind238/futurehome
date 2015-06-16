@@ -15,15 +15,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   </style>
   <template>
-      <paper-material elevation="2">
-        <template is="dom-repeat" items="{{items}}">
-          <paper-icon-item>
-            <paper-checkbox item-icon></paper-checkbox>
-            <div class="flex">{{item}}</div>
-          </paper-icon-item>
-        </template>
-      </paper-material>
-    </div>
+    <paper-material elevation="2">
+      <template is="dom-repeat" items="{{items}}">
+        <paper-icon-item>
+          <paper-checkbox item-icon></paper-checkbox>
+          <div class="flex">{{item}}</div>
+        </paper-icon-item>
+      </template>
+    </paper-material>
   </template>
 </dom-module>
 <script>
