@@ -41,4 +41,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   };
 
+  app.nextSection = function() {
+    switch (app.route) {
+      case 'table-empty':
+        app.route='table-info';
+        break;
+      case 'table-info':
+        app.route='table-prep';
+        break;
+      case 'table-prep':
+        app.route='table-cook';
+        break;
+      case 'table-cook':
+        app.route='table-empty';
+        break;
+      default:
+    }
+  };
+
 })(document);
