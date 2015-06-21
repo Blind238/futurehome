@@ -8,44 +8,29 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<dom-module id="news-feed">
+<link rel="import" href="..\..\bower_components/polymer/polymer.html">
+
+<dom-module id="cutting-guide">
   <style>
     :host {
       display: block;
     }
-
-    .news-item{
-      padding: 0 15px;
-    }
-
   </style>
   <template>
-    <div class="layout vertical">
-      <template is="dom-repeat" items="{{entries}}">
-        <div class='news-item'>
-          <h2 class="paper-font-title">{{item.title}}</h2>
-          <p class="paper-font-body1">{{item.content}}</p>
-        </div>
-      </template>
-    </div>
-    <google-feeds feed="http://feeds.bbci.co.uk/news/rss.xml" count="5"></google-feeds>
+    <div>Hello from <span>{{foo}}</span></div>
   </template>
 </dom-module>
 <script>
 (function() {
   Polymer({
-    is: 'news-feed',
+    is: 'cutting-guide',
 
     properties: {
-      entries: {
-        type: Array
+      foo: {
+        type: String,
+        value: 'bar',
+        notify: true
       }
-    },
-    ready: function(){
-      var self = this;
-      window.addEventListener('google-feeds-response', function(e) {
-        self.entries = e.detail.feed.entries;
-      });
     }
   });
 })();
