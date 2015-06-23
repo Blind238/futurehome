@@ -21,3 +21,12 @@ paper-toolbar,
 info-widget {
   margin-right: 55px;
 }
+
+.cooking-area {
+  background-color: #e4e4e4;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 41.4%;
+}
