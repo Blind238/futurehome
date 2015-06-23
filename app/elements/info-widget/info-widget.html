@@ -15,19 +15,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     #time {
-      margin-right: 5px;
+      margin-right: 10px;
+    }
+    #date {
+      font-size: 1.8em;
+    }
+
+    #time,
+    #date,
+    #temperature {
+      font-weight: 300;
     }
 
   </style>
   <template>
     <div class="layout vertical">
       <div class="layout horizontal end">
-        <div id="time" class="paper-font-display1"></div>
-        <div id="date" class="paper-font-body2">{{date}}</div>
+        <div id="time" class="paper-font-display3"></div>
+        <div id="date" class="paper-font-display1">{{date}}</div>
       </div>
       <div class="layout horizontal end-justified">
         <div id="image"></div>
-        <div id="temperature" class="paper-font-body2">{{temperature}}</div>
+        <div id="temperature" class="paper-font-display1">{{temperature}}</div>
       </div>
     </div>
   </template>
