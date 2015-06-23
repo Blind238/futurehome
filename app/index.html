@@ -81,12 +81,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Main Content -->
         <div class="content">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+          <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
 
-            <section data-route="table-empty">
-            </section>
+            <neon-animatable data-route="table-empty">
+          </neon-animatable>
 
-            <section class="layout horizontal" data-route="table-info">
+            <neon-animatable class="layout horizontal" data-route="table-info">
               <div class="flex-4">
               </div>
               <div class="flex-5 layout">
@@ -94,9 +94,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </div>
               <div class="flex-3">
               </div>
-            </section>
+            </neon-animatable>
 
-            <section class="layout horizontal" data-route="table-prep">
+            <neon-animatable class="layout horizontal" data-route="table-prep">
               <div class="cooking-area">
               </div>
               <div class="flex-4">
@@ -108,13 +108,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <div class="flex-5">
 
               </div>
-            </section>
+            </neon-animatable>
 
-            <section data-route="table-cook">
+            <neon-animatable data-route="table-cook">
                 <cooking-tips for="cutting"></cooking-tips>
-            </section>
+            </neon-animatable>
 
-          </iron-pages>
+          </neon-animated-pages>
         </div>
       </paper-header-panel>
 
