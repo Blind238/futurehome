@@ -64,6 +64,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar">
           <!-- <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button> -->
+          <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
+
+            <neon-animatable data-route="table-empty"></neon-animatable>
+
+            <neon-animatable data-route="table-info"></neon-animatable>
+
+            <neon-animatable data-route="table-prep">
+              <div class="cooking-area"></div>
+            </neon-animatable>
+
+            <neon-animatable data-route="table-cook"></neon-animatable>
+
+          </neon-animated-pages>
           <span class="flex"></span>
 
           <!-- Toolbar icons -->
@@ -84,7 +97,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
 
             <neon-animatable data-route="table-empty">
-          </neon-animatable>
+            </neon-animatable>
 
             <neon-animatable class="layout horizontal" data-route="table-info">
               <div class="flex-4">
@@ -97,8 +110,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </neon-animatable>
 
             <neon-animatable class="layout horizontal" data-route="table-prep">
-              <div class="cooking-area">
-              </div>
               <div class="flex-4">
                 <ingredients-list></ingredients-list>
               </div>
