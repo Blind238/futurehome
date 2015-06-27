@@ -25,8 +25,8 @@ info-widget {
 .cooking-area {
   background-color: #e4e4e4;
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 41.4%;
+  top: 60px;
+  left: 65px;
+  height: 570px;
+  width: 38%;
 }
