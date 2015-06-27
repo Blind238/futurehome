@@ -48,6 +48,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/libs.min.js -->
+  <script src="bower_components/screenfull/dist/screenfull.js"></script>
   <script src="bower_components/moment/min/moment-with-locales.js"></script>
   <!-- endbuild -->
 
@@ -77,7 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <neon-animatable data-route="table-cook"></neon-animatable>
 
           </neon-animated-pages>
-          <span class="flex"></span>
+          <span on-tap="fullscreen" class="flex self-stretch"></span>
 
           <!-- Toolbar icons -->
           <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->

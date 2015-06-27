@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 (function(document) {
   'use strict';
   /* global moment */
+  /* global screenfull */
 
   // Grab a reference to our auto-binding template
   // and give it some initial binding values
@@ -56,6 +57,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         app.route='table-empty';
         break;
       default:
+    }
+  };
+
+  app.fullscreen = function(){
+    if(screenfull.enabled){
+      screenfull.toggle();
     }
   };
 
