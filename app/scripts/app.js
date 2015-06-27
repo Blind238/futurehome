@@ -66,4 +66,47 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
   };
 
+  var emptyTapStart;
+  var emptyTapInterval;
+
+  app.isMenuVisible = false;
+  app.roundMenuX = 0;
+  app.roundMenuY = 0;
+
+  app.emptyTapDown = function(e){
+    emptyTapStart = +moment();
+
+    if(!app.isMenuVisible){
+      app.roundMenuX = e.detail.x;
+      app.roundMenuY = e.detail.y;
+    }
+
+    emptyTapInterval = window.setInterval( function()
+    {
+      if(emptyTapStart && +moment() - emptyTapStart > 400){
+        app.isMenuVisible = true;
+        clearSetInterval(emptyTapInterval);
+      }
+    }, 10);
+
+  };
+
+  app.emptyTapUp = function(e){
+    emptyTapStart = null;
+    if(emptyTapInterval){
+      clearSetInterval(emptyTapInterval);
+    }
+  };
+
+  app.roundMenuTap = function(e){
+    app.isMenuVisible = false;
+    app.roundMenuX = 0;
+    app.roundMenuY = 0;
+  }
+
+  function clearSetInterval(reference){
+    window.clearInterval(reference);
+    reference = null;
+  }
+
 })(document);

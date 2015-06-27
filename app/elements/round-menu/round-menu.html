@@ -1,0 +1,75 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="..\..\bower_components/polymer/polymer.html">
+
+<dom-module id="round-menu">
+  <style>
+    :host {
+      display: none;
+      position: fixed;
+    }
+
+    :host(.visible) {
+      display: block;
+    }
+
+    div {
+      position:relative;
+      left: -50px;
+      top: -50px;
+      height: 100px;
+      width: 100px;
+      background-color: purple;
+    }
+  </style>
+  <template>
+    <div></div>
+  </template>
+</dom-module>
+<script>
+(function() {
+  Polymer({
+    is: 'round-menu',
+
+    properties: {
+      visible: {
+        type: Boolean,
+        value: false,
+        notify: true
+      },
+      x: {
+        type: Number,
+        notify: true
+      },
+      y: {
+        type: Number,
+        notify: true
+      },
+    },
+
+    listeners: {
+      'visible-changed': 'visibleChanged',
+      'x-changed': 'xChanged',
+      'y-changed': 'yChanged',
+    },
+
+    visibleChanged: function(e){
+      this.toggleClass('visible', e.detail.value)
+    },
+    xChanged: function(e){
+      this.style.left = e.detail.value + 'px';
+    },
+    yChanged: function(e){
+      this.style.top = e.detail.value + 'px';
+    }
+  });
+})();
+</script>

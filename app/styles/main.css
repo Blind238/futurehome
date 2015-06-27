@@ -30,3 +30,7 @@ info-widget {
   height: 570px;
   width: 38%;
 }
+
+.table-empty {
+  height: 800px;
+}
