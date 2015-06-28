@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 body {
   background: #fff;
+  background: url(../images/table-background.jpg) no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
