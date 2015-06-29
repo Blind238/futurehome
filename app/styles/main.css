@@ -33,8 +33,41 @@ info-widget {
   width: 585px;
 }
 
+.oven-area.off {
+  background-image: url(../images/oven-area-warm.png);
+}
+
 .table-empty {
   height: 800px;
+}
+
+.timer-progress {
+  display: none;
+  position: fixed;
+  top: 475px;
+  width: 505px;
+  left: 705px;
+  color: #f9f9f9;
+}
+
+.news {
+  position: relative;
+  top: 300px;
+  background-image: url(../images/news.png);
+  height: 498px;
+  width: 585px;
+}
+
+.mail {
+  position: relative;
+  top: 300px;
+  background-image: url(../images/mail.png);
+  height: 357px;
+  width: 574px;
+}
+
+paper-progress {
+  height: 8px;
 }
 
 paper-slider {

@@ -72,16 +72,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
             <neon-animatable data-route="table-empty"></neon-animatable>
 
-            <neon-animatable data-route="table-info">
+            <neon-animatable data-route="table-oven">
               <div class="oven-area"></div>
               <paper-slider value="200" min="90" max="240" pin></paper-slider>
             </neon-animatable>
 
-            <neon-animatable data-route="table-prep">
+            <neon-animatable data-route="table-eggs">
+              <div class="oven-area"></div>
+            </neon-animatable>
+            <neon-animatable data-route="table-news">
+              <div class="oven-area"></div>
+            </neon-animatable>
+            <neon-animatable data-route="table-mail">
               <div class="oven-area"></div>
             </neon-animatable>
 
-            <neon-animatable data-route="table-cook"></neon-animatable>
+            <neon-animatable data-route="table-still-warm">
+              <div class="oven-area off"></div>
+            </neon-animatable>
 
           </neon-animated-pages>
           <span on-tap="fullscreen" class="flex self-stretch"></span>
@@ -110,34 +118,59 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <round-menu visible="[[isMenuVisible]]" x="[[roundMenuX]]" y="[[roundMenuY]]" on-tap="roundMenuTap"></round-menu>
             </neon-animatable>
 
-            <neon-animatable class="layout horizontal" data-route="table-info">
-              <div class="flex-4">
-              </div>
-              <div class="flex-5 layout">
-              </div>
-              <div class="flex-3">
-              </div>
+            <neon-animatable class="layout horizontal" data-route="table-oven">
             </neon-animatable>
 
-            <neon-animatable class="layout horizontal" data-route="table-prep">
-              <div class="flex-4">
-                <ingredients-list></ingredients-list>
-              </div>
-              <div class="flex-3 relative">
-                <cooking-tips for="pan"></cooking-tips>
+            <neon-animatable class="layout horizontal" data-route="table-eggs">
+              <div class="flex-3">
+                <div class="eggs">
+                </div>
               </div>
               <div class="flex-5">
+              </div>
+              <div class="flex-4">
+              </div>
+            </neon-animatable>
+
+            <neon-animatable class="layout horizontal" data-route="table-news">
+              <div class="flex-3">
+                <div class="eggs">
+                </div>
+              </div>
+              <div class="flex-5">
+                <div class="news">
+                </div>
+              </div>
+              <div class="flex-4">
+              </div>
+            </neon-animatable>
+
+            <neon-animatable class="layout horizontal" data-route="table-mail">
+              <div class="flex-3">
+                <div class="eggs">
+                </div>
+              </div>
+              <div class="flex-5">
+                <div class="mail">
+                </div>
+              </div>
+              <div class="flex-4">
 
               </div>
             </neon-animatable>
 
-            <neon-animatable data-route="table-cook">
-                <cooking-tips for="cutting"></cooking-tips>
+            <neon-animatable data-route="table-still-warm">
             </neon-animatable>
 
           </neon-animated-pages>
         </div>
       </paper-header-panel>
+
+      <div class="timer-progress">
+        <div class="layout horizontal">
+          <paper-progress class="flex"  value="{{timerCount}}"></paper-progress><span>{{timerString}}</span>
+        </div>
+      </div>
 
     <!-- <paper-toast id="caching-complete"
                  duration="6000"

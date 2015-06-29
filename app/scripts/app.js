@@ -45,15 +45,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.nextSection = function() {
     switch (app.route) {
       case 'table-empty':
-        app.route='table-info';
+        app.route='table-oven';
         break;
-      case 'table-info':
-        app.route='table-prep';
+      case 'table-oven':
+        app.route='table-eggs';
+        app.startTimer();
         break;
-      case 'table-prep':
-        app.route='table-cook';
+      case 'table-eggs':
+        app.route='table-news';
         break;
-      case 'table-cook':
+      case 'table-news':
+        app.route='table-mail';
+        break;
+      case 'table-mail':
+        app.route='table-still-warm';
+        app.stopTimer();
+        break;
+      case 'table-still-warm':
         app.route='table-empty';
         break;
       default:
@@ -73,6 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   app.roundMenuX = 0;
   app.roundMenuY = 0;
 
+  // TODO: Make it appear on tap up, else use will select the new element, turning the screen blue
   app.emptyTapDown = function(e){
     emptyTapStart = +moment();
 
@@ -102,6 +111,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     app.isMenuVisible = false;
     app.roundMenuX = 0;
     app.roundMenuY = 0;
+  }
+
+  app.timerCount = 0;
+  app.timerInterval = null;
+  app.timerString = '';
+
+  app.startTimer = function(){
+    app.timer = moment.duration(10, 'minutes');
+    app.timerInterval = window.setInterval(function(){
+      app.timer.subtract(1, 'second');
+      app.timerCount = 100 - (app.timer.asSeconds() / 6);
+      app.timerString = '' + app.timer.minutes() + ':' + app.timer.seconds();
+      if (app.timer.asSeconds() === 0){
+        app.stopTimer();
+      }
+    },1000);
+
+    document.querySelector('.timer-progress').style.display = 'block';
+  }
+
+  app.stopTimer = function(){
+    clearInterval(app.timerInterval);
+    app.timerCount = 0;
+    app.timerString = '';
+    document.querySelector('.timer-progress').style.display = 'none';
   }
 
   function clearSetInterval(reference){
