@@ -36,3 +36,11 @@ info-widget {
 .table-empty {
   height: 800px;
 }
+
+paper-slider {
+  position: fixed;
+  z-index: 1;
+  top: 475px;
+  width: 505px;
+  left: 705px;
+}
