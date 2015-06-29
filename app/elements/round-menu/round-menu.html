@@ -13,12 +13,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="round-menu">
   <style>
     :host {
-      display: none;
+      visibility: hidden;
       position: fixed;
+      opacity: 0;
+      transition: visibility 0s linear 0s, opacity 0.2s linear;
     }
 
     :host(.visible) {
-      display: block;
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0.2s;
     }
 
     div {
