@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     :host {
       display: block;
+      color: #f9f9f9;
     }
 
     #time {
@@ -27,6 +28,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-weight: 300;
     }
 
+    #image {
+      background-image: url(../../images/weather-icon.png);
+      height: 49px;
+      width: 75px;
+      margin-right: 10px;
+    }
+
   </style>
   <template>
     <div class="layout vertical">
@@ -34,7 +42,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="time" class="paper-font-display3"></div>
         <div id="date" class="paper-font-display1">{{date}}</div>
       </div>
-      <div class="layout horizontal end-justified">
+      <div class="layout horizontal end end-justified">
         <div id="image"></div>
         <div id="temperature" class="paper-font-display1">{{temperature}}</div>
       </div>
