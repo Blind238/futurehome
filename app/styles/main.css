@@ -24,13 +24,13 @@ info-widget {
   margin-right: 55px;
 }
 
-.cooking-area {
-  background-color: #e4e4e4;
+.oven-area {
+  background-image: url(../images/oven-area.png);
   position: fixed;
-  top: 60px;
-  left: 65px;
-  height: 570px;
-  width: 38%;
+  top: 38px;
+  left: 665px;
+  height: 436px;
+  width: 585px;
 }
 
 .table-empty {
