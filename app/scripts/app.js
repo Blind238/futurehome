@@ -158,4 +158,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     document.querySelector('.table-logo').classList.toggle('off');
   };
 
+  window.oncontextmenu = function(){
+    return false;
+  };
+
 })(document);
