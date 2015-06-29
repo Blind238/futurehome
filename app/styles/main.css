@@ -37,6 +37,20 @@ info-widget {
   background-image: url(../images/oven-area-warm.png);
 }
 
+.table-logo {
+  position: fixed;
+  display: block;
+  background-image: url(../images/chef-logo.png);
+  top:0;
+  left:0;
+  height: 1080px;
+  width: 1920px;
+}
+
+.table-logo.off {
+  display:none;
+}
+
 .table-empty {
   height: 800px;
 }

@@ -72,6 +72,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         break;
       case 'table-still-warm':
         app.route='table-empty';
+        app.toggleLogo();
         break;
       default:
     }
@@ -152,5 +153,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     window.clearInterval(reference);
     reference = null;
   }
+
+  app.toggleLogo = function(){
+    document.querySelector('.table-logo').classList.toggle('off');
+  };
 
 })(document);

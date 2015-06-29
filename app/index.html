@@ -103,7 +103,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </neon-animatable>
 
           </neon-animated-pages>
-          <span on-tap="fullscreen" class="flex self-stretch"></span>
+          <span on-tap="fullscreen" class="flex self-stretch" style="z-index: 1;"></span>
           <span class="flex-2"></span>
 
           <!-- Toolbar icons -->
@@ -124,6 +124,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="fade-in-animation" exit-animation="fade-out-animation">
 
             <neon-animatable data-route="table-empty">
+              <div class="table-logo" on-tap='toggleLogo'>
+              </div>
               <div class="table-empty" on-down="emptyTapDown" on-up="emptyTapUp">
               </div>
             </neon-animatable>
