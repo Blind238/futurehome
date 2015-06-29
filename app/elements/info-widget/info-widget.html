@@ -63,7 +63,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     ready: function(){
       var self = this;
 
-      self.date = moment().format('MMMM DD, YYYY');
+      self.date = moment().format('MMMM DD') + ', 2050';
       self.temperature = '22°C';
 
       self.$.time.textContent = moment().format('HH:mm');
