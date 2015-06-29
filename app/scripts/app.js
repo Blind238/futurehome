@@ -48,16 +48,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         app.route='table-oven';
         break;
       case 'table-oven':
-        app.route='table-eggs';
+        app.route='table-baking';
         app.startTimer();
         break;
+      case 'table-baking':
+        app.route='table-eggs';
+        break;
       case 'table-eggs':
+        app.route='table-boiling';
+        break;
+      case 'table-boiling':
         app.route='table-news';
         break;
       case 'table-news':
         app.route='table-mail';
         break;
       case 'table-mail':
+        app.route='table-done';
+        break;
+      case 'table-done':
         app.route='table-still-warm';
         app.stopTimer();
         break;
@@ -100,18 +109,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   };
 
-  app.emptyTapUp = function(e){
+  app.emptyTapUp = function(){
     emptyTapStart = null;
     if(emptyTapInterval){
       clearSetInterval(emptyTapInterval);
     }
   };
 
-  app.roundMenuTap = function(e){
+  app.roundMenuTap = function(){
+    app.nextSection();
     app.isMenuVisible = false;
     app.roundMenuX = 0;
     app.roundMenuY = 0;
-  }
+  };
 
   app.timerCount = 0;
   app.timerInterval = null;
@@ -129,14 +139,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },1000);
 
     document.querySelector('.timer-progress').style.display = 'block';
-  }
+  };
 
   app.stopTimer = function(){
     clearInterval(app.timerInterval);
     app.timerCount = 0;
     app.timerString = '';
     document.querySelector('.timer-progress').style.display = 'none';
-  }
+  };
 
   function clearSetInterval(reference){
     window.clearInterval(reference);

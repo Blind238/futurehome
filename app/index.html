@@ -77,13 +77,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-slider value="200" min="90" max="240" pin></paper-slider>
             </neon-animatable>
 
+            <neon-animatable data-route="table-baking">
+              <div class="oven-area"></div>
+            </neon-animatable>
+
             <neon-animatable data-route="table-eggs">
+              <div class="oven-area"></div>
+            </neon-animatable>
+            <neon-animatable data-route="table-boiling">
               <div class="oven-area"></div>
             </neon-animatable>
             <neon-animatable data-route="table-news">
               <div class="oven-area"></div>
             </neon-animatable>
             <neon-animatable data-route="table-mail">
+              <div class="oven-area"></div>
+            </neon-animatable>
+
+            <neon-animatable data-route="table-done">
               <div class="oven-area"></div>
             </neon-animatable>
 
@@ -115,46 +126,74 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <neon-animatable data-route="table-empty">
               <div class="table-empty" on-down="emptyTapDown" on-up="emptyTapUp">
               </div>
-              <round-menu visible="[[isMenuVisible]]" x="[[roundMenuX]]" y="[[roundMenuY]]" on-tap="roundMenuTap"></round-menu>
             </neon-animatable>
 
-            <neon-animatable class="layout horizontal" data-route="table-oven">
+            <neon-animatable data-route="table-oven">
+            </neon-animatable>
+
+
+            <neon-animatable data-route="table-baking">
+              <div class="table-empty" on-down="emptyTapDown" on-up="emptyTapUp">
+              </div>
             </neon-animatable>
 
             <neon-animatable class="layout horizontal" data-route="table-eggs">
-              <div class="flex-3">
-                <div class="eggs">
+              <div class="flex">
+                <div class="egg choice" on-tap="nextSection">
                 </div>
               </div>
-              <div class="flex-5">
+              <div class="flex">
               </div>
-              <div class="flex-4">
+              <div class="flex">
+              </div>
+            </neon-animatable>
+
+            <neon-animatable data-route="table-boiling">
+              <div class="flex">
+                <div class="egg timer">
+                </div>
+              </div>
+              <div class="flex table-empty" on-down="emptyTapDown" on-up="emptyTapUp">
+              </div>
+              <div class="flex">
               </div>
             </neon-animatable>
 
             <neon-animatable class="layout horizontal" data-route="table-news">
-              <div class="flex-3">
-                <div class="eggs">
+              <div class="flex">
+                <div class="egg timer">
                 </div>
               </div>
-              <div class="flex-5">
+              <div class="flex">
                 <div class="news">
                 </div>
               </div>
-              <div class="flex-4">
+              <div class="flex table-empty" on-down="emptyTapDown" on-up="emptyTapUp">
               </div>
             </neon-animatable>
 
             <neon-animatable class="layout horizontal" data-route="table-mail">
-              <div class="flex-3">
-                <div class="eggs">
+              <div class="flex">
+                <div class="egg timer">
                 </div>
               </div>
-              <div class="flex-5">
-                <div class="mail">
+              <div class="flex">
+                <div class="mail" on-tap="nextSection">
                 </div>
               </div>
-              <div class="flex-4">
+              <div class="flex">
+
+              </div>
+            </neon-animatable>
+
+            <neon-animatable class="layout horizontal" data-route="table-done">
+              <div class="flex">
+                <div class="egg timer">
+                </div>
+              </div>
+              <div class="flex">
+              </div>
+              <div class="flex">
 
               </div>
             </neon-animatable>
@@ -165,6 +204,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </neon-animated-pages>
         </div>
       </paper-header-panel>
+
+      <round-menu visible="[[isMenuVisible]]" x="[[roundMenuX]]" y="[[roundMenuY]]" on-tap="roundMenuTap"></round-menu>
 
       <div class="timer-progress">
         <div class="layout horizontal">

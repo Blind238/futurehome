@@ -50,6 +50,25 @@ info-widget {
   color: #f9f9f9;
 }
 
+.timer-progress span {
+  margin-left: 5px;
+}
+
+.egg {
+  position: relative;
+  top: 300px;
+  left: 100px;
+  height: 231px;
+  width: 211px;
+}
+
+.egg.choice {
+  background-image: url(../images/egg-choice.png)
+}
+.egg.timer {
+  background-image: url(../images/egg-timers.png)
+}
+
 .news {
   position: relative;
   top: 300px;
@@ -67,6 +86,7 @@ info-widget {
 }
 
 paper-progress {
+  margin-top: 6px;
   height: 8px;
 }
 
